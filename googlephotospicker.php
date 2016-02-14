@@ -25,7 +25,7 @@ function google_photos_picker_button_script()
     ?>
     <script type="text/javascript">
       (function() {
-        QTags.addButton("google_photos_picker", "Google Photos Picker", cb);
+        QTags.addButton("google_photos_picker", "google photos picker", cb);
 
         function cb() {
           openGooglePhotosPicker(picker_cb);    
@@ -109,7 +109,7 @@ add_action( "admin_init", "google_photos_picker_settings_api_init" );
  
  
 function google_photos_picker_setting_section_callback_function() {
-  echo "<p>Intro text for our settings section</p>";
+  echo "<p>Go to Google Developers Console and create a browser key and OAuth 2.0 client id, and set them here.</p>";
 }
  
 function google_photos_picker_setting_browser_key_callback_function() {
