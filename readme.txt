@@ -14,6 +14,16 @@ This is a plugin that enables you choose Google Photos and inserts them in img t
 
 This is a plugin that enables you choose Google Photos and inserts them in img tags in text mode post editor.  This plugin requires you create a project in Google Developers Console to have your own API credentials.
 
+Here are steps to create your own API credentials.
+
+1. Create a project in [Google Developers Console](https://console.developers.google.com/)
+1. Enable `Google Picker API`
+1. Create a API key (Browser key)
+1. Create an OAuth 2.0 client ID
+  * Add your blog hostname (e.g. http://foobar.com) in `Authorized JavaScript origins`
+1. Set the browser key and OAuth 2.0 client ID in the plugin settings menu.
+  * You can find the plugin settings menu in `Settings -> Media`
+
 
 == Installation ==
 
