@@ -8,11 +8,11 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This is a plugin that enables you choose Google Photos and inserts them in img tags in text mode post editor.
+This is a plugin that enables you choose images in Google Photos and inserts them in img tags in text mode post editor.
 
 == Description ==
 
-This is a plugin that enables you choose Google Photos and inserts them in img tags in text mode post editor.  This plugin requires you create a project in Google Developers Console to have your own API credentials.
+This is a plugin that enables you choose images in Google Photos and inserts them in img tags in text mode post editor.  This plugin requires you create a project in Google Developers Console to have your own API credentials.
 
 Here are steps to create your own API credentials.
 
