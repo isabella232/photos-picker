@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: iwongu
 Tags: post, google photos, images
-Donate link: http://wordpress.org/plugins/google-photos-picker/
+Donate link: http://wordpress.org/plugins/photos-picker/
 Requires at least: 4.4
 Tested up to: 4.4.3
 Stable tag: 1.0
