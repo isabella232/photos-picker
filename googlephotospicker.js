@@ -2,6 +2,7 @@
 
   var pickerApiLoaded = false;
   var oauthToken;
+  var userCallback;
 
   var clientId = googlePhotosPickerVars.clientId;
   var developerKey = googlePhotosPickerVars.browserKey;
@@ -24,35 +25,42 @@
 
   function onPickerApiLoad() {
     pickerApiLoaded = true;
+    createPicker();
   }
 
   function handleAuthResult(authResult) {
     if (authResult && !authResult.error) {
       oauthToken = authResult.access_token;
+      createPicker();
     }
   }
 
-  function createPicker(cb) {
+  function createPicker() {
     if (pickerApiLoaded && oauthToken) {
       var picker = new google.picker.PickerBuilder().
           enableFeature(google.picker.Feature.MULTISELECT_ENABLED).
           addView(google.picker.ViewId.PHOTOS).
           setOAuthToken(oauthToken).
           setDeveloperKey(developerKey).
-          setCallback(cb).
+          setCallback(userCallback).
           build();
       picker.setVisible(true);
     }
   }
 
   // Exports.
-  window.openGooglePhotosPicker = createPicker;
-  window.onApiLoad = onApiLoad;
 
-
-  var scriptEl = document.createElement('script');
-  scriptEl.setAttribute('src', 'https://apis.google.com/js/api.js?onload=onApiLoad');
-  scriptEl.setAttribute('gapi_processed', 'true');
-  document.head.appendChild(scriptEl);
-
+  window.openGooglePhotosPicker = function(cb) {
+    userCallback = cb;
+    if (pickerApiLoaded && oauthToken) {
+      createPicker();
+      return;
+    }
+    
+    window.onApiLoad = onApiLoad;
+    var scriptEl = document.createElement('script');
+    scriptEl.setAttribute('src', 'https://apis.google.com/js/api.js?onload=onApiLoad');
+    scriptEl.setAttribute('gapi_processed', 'true');
+    document.head.appendChild(scriptEl);
+  };
 }());
