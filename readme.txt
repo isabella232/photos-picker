@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Google Photos Picker ===
 Contributors: iwongu
 Tags: post, google photos, images
 Donate link: http://wordpress.org/plugins/photos-picker/
